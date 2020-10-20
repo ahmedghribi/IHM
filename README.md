@@ -1,3 +1,6 @@
+renomer fichier .env.exemple => .env ***********************
+
+
 composer install ****************
 php artisan key:generate *************
 php artisan serve a chaque fois on démarre le serveur ***********
