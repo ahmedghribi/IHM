@@ -1,17 +1,17 @@
-renomer fichier .env.exemple => .env ***********************
+renomer fichier .env.exemple => .env 
 
-importer la DB ******************
-
-
-composer install ****************
+importer la DB 
 
 
-php artisan key:generate *************
+composer install 
 
 
-php artisan serve a chaque fois on démarre le serveur ***********
+php artisan key:generate 
 
-admin : ahmedghribi51@gmail.com  ****************
+
+php artisan serve => a chaque fois on démarre le serveur 
+
+admin : ahmedghribi51@gmail.com  
 
 
 pass : 12345678
