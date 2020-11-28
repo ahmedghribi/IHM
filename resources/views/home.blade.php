@@ -49,8 +49,8 @@
     <div class="row justify-content-center">
       <div class="col-lg-12">
         <div class="main_title">
-          <h2><span>Featured product</span></h2>
-          <p>Bring called seed first of third give itself now ment</p>
+          <h2><span>Produit en Vedette</span></h2>
+          <p>N</p>
         </div>
       </div>
     </div>

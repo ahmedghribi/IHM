@@ -76,22 +76,22 @@
     <div class="float-right site-address">
       <h4>{{setting('app_name')}}</h4>
       <p>{{setting('shop_address')}}</p>
-      <p>Phone: <a href="tel:{{setting('app_phone')}}">{{setting('app_phone')}}</a></p>
+      <p>Telephone: <a href="tel:{{setting('app_phone')}}">{{setting('app_phone')}}</a></p>
       <p>Email: <a href="mailto:{{setting('app_email')}}">{{setting('app_email')}}</a></p>
     </div>
     <div class="clearfix"></div>
   </div>
   <div class="invoice-description">
     <div class="invoice-left-top float-left">
-      <h6>Invoice to</h6>
+      <h6>Facture à</h6>
        <h3>{{$order->first_name}} {{$order->last_name}}</h3>
        <div class="address">
         <p>
-          <strong>City: </strong>
+          <strong>Région: </strong>
           {{App\City::findById($order->city_id)->name}}
         </p>
         <p>
-          <strong>Address: </strong>
+          <strong>Adresse: </strong>
           {{ $order->address }}
         </p>
          <p><strong>Phone:</strong> {{ $order->phone_number }}</p>
@@ -99,7 +99,7 @@
        </div>
     </div>
     <div class="invoice-right-top float-right" class="text-right">
-      <h3>Invoice #{{$order->order_number}}</h3>
+      <h3>Facture #{{$order->order_number}}</h3>
       <p>{{ $order->created_at }}</p>
       <img class="img-responsive" src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(150)->generate(route('admin.product.order.show', $order->id )))}}">
     </div>
@@ -107,13 +107,13 @@
   </div>
   <section class="order_details">
     <div class="table-header">
-      <h5>Order Details</h5>
+      <h5>Détails de la commande</h5>
     </div>
     <table class="table table-bordered table-stripe">
       <thead>
         <tr>
-          <th scope="col" class="col-6">Product</th>
-          <th scope="col" class="col-3">Quantity</th>
+          <th scope="col" class="col-6">Produit</th>
+          <th scope="col" class="col-3">Quantité</th>
           <th scope="col" class="col-3">Total</th>
         </tr>
       </thead>
@@ -129,19 +129,19 @@
       <tfoot>
         <tr>
           <th scope="col" class="empty"></th>
-          <th scope="col" class="text-right">Subtotal:</th>
+          <th scope="col" class="text-right">Sous-Total:</th>
           <th scope="col"> <span>{{Helper::orderPrice($order->id, $order->user->id)}}{{Helper::base_currency()}}</span></th>
         </tr>
       @if(!empty($order->coupon))
         <tr>
           <th scope="col" class="empty"></th>
-          <th scope="col" class="text-right">Discount:</th>
+          <th scope="col" class="text-right">Remise:</th>
           <th scope="col"><span>-{{$order->coupon->discount(Helper::orderPrice($order->id, $order->user->id))}}{{Helper::base_currency()}}</span></th>
         </tr>
       @endif
         <tr>
           <th scope="col" class="empty"></th>
-          <th scope="col" class="text-right ">Shipping:</th>
+          <th scope="col" class="text-right ">Livraison:</th>
           <th><span>{{$order->shipping->price}}{{Helper::base_currency()}}</span></th>
         </tr>
         <tr>
@@ -161,15 +161,15 @@
     </table>
   </section>
   <div class="thanks mt-3">
-    <h4>Thank you for your business !!</h4>
+    <h4>Merci Pour Votre Confiance !!</h4>
   </div>
   <div class="authority float-right mt-5">
     <p>-----------------------------------</p>
-    <h5>Authority Signature:</h5>
+    <h5>Signature du mandataire:</h5>
   </div>
   <div class="clearfix"></div>
 @else
-  <h5 class="text-danger">Invalid</h5>
+  <h5 class="text-danger">Invalide</h5>
 @endif
 </body>
 </html>

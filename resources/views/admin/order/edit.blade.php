@@ -8,11 +8,11 @@
     <table class="table table-striped table-hover">
       <thead>
         <tr>
-          <th scope="col">Order</th>
-          <th scope="col">Name</th>
+          <th scope="col">Commande</th>
+          <th scope="col">Nom</th>
 
-          <th scope="col">Quantity</th>
-          <th scope="col">Price</th>
+          <th scope="col">Quantité</th>
+          <th scope="col">Prix</th>
         </tr>
       </thead>
       <tbody>
@@ -29,18 +29,18 @@
       {{csrf_field()}}
 
       <div class="form-group">
-        <label for="paymentStatus">Payment status</label>
+        <label for="paymentStatus">Etat de paiement</label>
         <select class="form-control" id="paymentStatus" name="payment_status">
-          <option value="" disabled>Select option</option>
+          <option value="" disabled>Selectionnez option</option>
           <option value="paid" @if($order->payment->status == 'paid') selected @endif>Paid</option>
           <option value="unpaid" @if($order->payment->status == 'unpaid') selected @endif>Unpaid</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="OrderStatus">Order status</label>
+        <label for="OrderStatus">Etat des Commandes</label>
         <select class="form-control" id="OrderStatus" name="order_status">
-          <option value="" disabled>Select option</option>
+          <option value="" disabled>Selectionnez une option</option>
           <option value="pending" @if($order->status == 'pending') selected @endif>Pending</option>
           <option value="processing" @if($order->status == 'processing') selected @endif>Processing</option>
           <option value="completed" @if($order->status == 'completed') selected @endif>Completed</option>

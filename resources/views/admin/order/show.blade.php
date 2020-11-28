@@ -7,11 +7,11 @@
     <table class="table table-striped table-hover">
       <thead>
         <tr>
-          <th scope="col">Order</th>
-          <th scope="col">Status</th>
-          <th scope="col">Payment</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Price</th>
+          <th scope="col">Commande</th>
+          <th scope="col">Statut</th>
+          <th scope="col">Paiement</th>
+          <th scope="col">Quantité</th>
+          <th scope="col">Prix</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -24,8 +24,8 @@
           <td>{{Helper::grandPrice($order->id, $order->user->id)}}{{Helper::base_currency()}}</td>
           <td>
             <a class="btn btn-primary" href="{{ route('admin.product.order.pdf', $order->id )}}">Pdf</a>
-            <a class="btn btn-warning" href="{{ route('admin.product.order.edit', $order->id )}}">Edit</a>
-            <a class="btn btn-danger" href="{{ route('admin.product.order.destroy', $order->id )}}">Delete</a>
+            <a class="btn btn-warning" href="{{ route('admin.product.order.edit', $order->id )}}">Modifier</a>
+            <a class="btn btn-danger" href="{{ route('admin.product.order.destroy', $order->id )}}">Supprimer</a>
           </td>
         </tr>
       </tbody>
@@ -36,32 +36,32 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="confirmation_tittle">
-              {{-- <span>Thank you. Your order has been received.</span> --}}
+              {{-- <span>Merci. Votre Commande est reçue.</span> --}}
             </div>
           </div>
           <div class="col-lg-6 col-lx-4">
             <div class="single_confirmation_details">
-              <h4>order info</h4>
+              <h4>Information de la commande</h4>
               <ul>
                 <li>
-                  <p>order number</p><span>: {{$order->order_number}}</span>
+                  <p>Numero de la commande</p><span>: {{$order->order_number}}</span>
                 </li>
                 <li>
-                  <p>data</p><span>: {{$order->updated_at}}</span>
+                  <p>Données</p><span>: {{$order->updated_at}}</span>
                 </li>
                 <li>
                   <p>total</p><span>: {{Helper::grandPrice($order->id, $order->user->id)}}{{Helper::base_currency()}} </span>
                 </li>
                 <li>
-                  <p>payment method</p><span>: {{$order->payment->payment_method}}</span>
+                  <p>Méthode de paiement</p><span>: {{$order->payment->payment_method}}</span>
                 </li>
                 @if($order->payment->payment_method === 'bKash' || $order->payment->payment_method === 'rocket')
                   <li>
-                    <p>transection Id</p><span>: {{$order->payment->transection_id}}</span>
+                    <p>ID de transaction</p><span>: {{$order->payment->transection_id}}</span>
                   </li>
                 @endif
                 <li>
-                  <p>payment status</p><span>: {{$order->payment->status}}</span>
+                  <p>Statut de paiement</p><span>: {{$order->payment->status}}</span>
                 </li>
               </ul>
             </div>
@@ -71,25 +71,25 @@
 
           <div class="col-lg-6 col-lx-4">
             <div class="single_confirmation_details">
-              <h4>shipping Address</h4>
+              <h4>Adresse de Livraison</h4>
               <ul>
                 <li>
-                  <p>Name</p><span>: {{$order->first_name}} {{$order->last_name}}</span>
+                  <p>Nom</p><span>: {{$order->first_name}} {{$order->last_name}}</span>
                 </li>
                 <li>
-                  <p>Address</p><span>: {{$order->address}}</span>
+                  <p>Adresse</p><span>: {{$order->address}}</span>
                 </li>
                 <li>
-                  <p>City</p><span>: {{App\City::findById($order->city_id)->name}}</span>
+                  <p>Région</p><span>: {{App\City::findById($order->city_id)->name}}</span>
                 </li>
                 <li>
-                  <p>Country</p><span>: {{$order->country}}</span>
+                  <p>Pays</p><span>: {{$order->country}}</span>
                 </li>
                 <li>
-                  <p>Postcode</p><span>: {{$order->post_code}}</span>
+                  <p>Code Postal</p><span>: {{$order->post_code}}</span>
                 </li>
                 <li>
-                  <p>Phone number</p><span>: {{$order->phone_number}}</span>
+                  <p>Numero de Téléphone</p><span>: {{$order->phone_number}}</span>
                 </li>
                 <li>
                   <p>Email</p><span class="email">: {{ $order->user->email }}</span>
@@ -102,12 +102,12 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="order_details_iner">
-              <h3>Order Details</h3>
+              <h3>Détails de la commande</h3>
               <table class="table table-borderless">
                 <thead>
                   <tr>
-                    <th scope="col" class="col-5">Product</th>
-                    <th scope="col" class="col-4">Quantity</th>
+                    <th scope="col" class="col-5">Produit</th>
+                    <th scope="col" class="col-4">Quantité</th>
                     <th scope="col" class="col-3">Total</th>
                   </tr>
                 </thead>
@@ -122,13 +122,13 @@
                 @endforeach
                   <tr>
                     <th></th>
-                    <th>Subtotal</th>
+                    <th>Sous-Total</th>
                     <th><span>{{Helper::orderPrice($order->id, $order->user->id)}}{{Helper::base_currency()}}</span></th>
                   </tr>
                   @if(!empty($order->coupon))
                   <tr>
                     <th></th>
-                    <th>Discount</th>
+                    <th>Remise</th>
                     <th><span>-{{$order->coupon->discount(Helper::orderPrice($order->id, $order->user->id))}}{{Helper::base_currency()}}</span></th>
                   </tr>                 
                   @endif
@@ -136,7 +136,7 @@
 
                   <tr>
                     <th></th>
-                    <th>Shipping</th>
+                    <th>Livraison</th>
                     <th>{{$order->shipping->price}}{{Helper::base_currency()}}</span></th>
                   </tr>
                 </tbody>

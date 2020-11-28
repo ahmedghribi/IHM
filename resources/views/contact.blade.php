@@ -41,7 +41,7 @@
 
       <div class="row">
         <div class="col-12">
-          <h2 class="contact-title">Get in Touch</h2>
+          <h2 class="contact-title">Restez en Contact</h2>
         </div>
         <div class="col-lg-8 mb-4 mb-lg-0">
           <form class="form-contact contact_form" action="{{route('contact.store')}}" method="post" id="contactForm" novalidate="novalidate">
@@ -68,7 +68,7 @@
               </div>
             </div>
             <div class="form-group mt-lg-3">
-              <button type="submit" class="main_btn" id="submit_btn">Send Message</button>
+              <button type="submit" class="main_btn" id="submit_btn">Envoyer un Message</button>
             </div>
           </form>
 
@@ -92,7 +92,7 @@
             <span class="contact-info__icon"><i class="ti-email"></i></span>
             <div class="media-body">
               <h3><a href="mailto:{{setting('app_email')}}">{{setting('app_email')}}</a></h3>
-              <p>Send us your query anytime!</p>
+              <p>Envoyez nous votre demande n'importe quand!</p>
             </div>
           </div>
         </div>
@@ -106,13 +106,13 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="text-success">Thank you!</h2>
+          <h2 class="text-success">Merci!</h2>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p class="text-success">Your message is successfully sent...</p>
+          <p class="text-success">Votre Message est envoyé avec succés...</p>
         </div>
       </div>
     </div>
@@ -129,7 +129,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <p class="text-warning">Something went wrong.</p>
+          <p class="text-warning">Un problème est survenu.</p>
         </div>
       </div>
     </div>

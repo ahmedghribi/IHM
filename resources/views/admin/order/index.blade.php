@@ -8,19 +8,19 @@
         <thead>
           <tr>
             <th>S\N:</th>
-            <th>Order</th>
-            <th>Status</th>
-            <th>Payment status</th>
-            <th>Payment method</th>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
+            <th>Commande</th>
+            <th>Statut</th>
+            <th>Etat de paiement</th>
+            <th>Methode de paiement</th>
+            <th>Nom</th>
+            <th>Quantité</th>
+            <th>Prix</th>
             <th>Action</th>
           </tr>
         </thead>
       </table>
     @else
-      <h2>Order Empty!</h2>
+      <h2>Commande Vide!</h2>
     @endif
   </div>
 </div>
