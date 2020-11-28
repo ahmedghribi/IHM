@@ -32,7 +32,7 @@
               scrollwheel:  false
             });
           }
-          
+        
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
         
@@ -101,7 +101,7 @@
   </section>
 	<!-- ================ contact section end ================= -->
 
-	<!--================Contact Success and Error message Area =================-->
+
   <div id="success" class="modal modal-message fade" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
