@@ -42,7 +42,7 @@
         <div class="row">
           <div class="col-lg-7">
             <div class="float-left">
-              <p>@if( Helper::setting()->has('app_email') && !empty(setting('app_email')) ) Mail: <a href="mailto:{{setting('app_email')}}">{{setting('app_email')}}</a>@endif</p>
+              <p>@if( Helper::setting()->has('app_email') && !empty(setting('app_email')) ) PHONE: <a href="mailto:{{setting('app_email')}}">{{setting('app_email')}}</a>@endif</p>
               <p>@if( Helper::setting()->has('app_phone') && !empty(setting('app_phone')) )<a href="tel:{{setting('app_phone')}}">{{setting('app_phone')}}</a>@endif</p>
             </div>
           </div>
@@ -51,17 +51,17 @@
               <ul class="right_side">
                 <li>
                   <a href="{{route('shop.track')}}">
-                    Suivie Commande
+                    track order
                   </a>
                 </li>
                 <li>
                   <a href="{{route('contact')}}">
-                    Contactez Nous
+                    Contact Us
                   </a>
                 </li>
                 @if( Helper::setting()->has('shop_currency'))
 
-                <li class="curreny-wrap">Devise <i class="fa fa-angle-down"></i>
+                <li class="curreny-wrap">Currency <i class="fa fa-angle-down"></i>
                     <ul class="curreny-list">
                       <li @if(Helper::base_currency() == Helper::currency()) class="active" @endif ><a href="{{route('shop.currency', 0)}}">{{Helper::base_currency_data()['symbol']}} {{Helper::base_currency_data()['code']}}</a></li>
                       @foreach(Helper::currencies() as $currency)
@@ -143,7 +143,7 @@
                     <div class="input-group">
                       <input type="text" class="form-control" placeholder="Search...." aria-label="Search" name="search">
                       <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="submit">Recherche</button>
+                        <button class="btn btn-outline-secondary" type="submit">Search</button>
                       </div>
                     </div>
                   </form>
@@ -209,7 +209,7 @@
     @endforeach
     </div>
     <div class="footer-bottom row align-items-center">
-      <p class="footer-text m-0 col-lg-8 col-md-12">@if( Helper::setting()->has('copyright_text') && !empty(setting('copyright_text')) ) {{setting('copyright_text')}} | @endif Developed by <a href="#" target="_blank">IIT Team IHM</a></p>
+      <p class="footer-text m-0 col-lg-8 col-md-12">@if( Helper::setting()->has('copyright_text') && !empty(setting('copyright_text')) ) {{setting('copyright_text')}} | @endif Developed by <a href="#" target="_blank">Ahmed Ghribi 2019</a></p>
       <div class="col-lg-4 col-md-12 footer-social">
         @if( Helper::setting()->has('social_facebook') && !empty(setting('social_facebook')) )<a href="{{setting('social_facebook')}}" target="_blank"><i class="fa fa-facebook"></i></a>@endif
         @if(Helper::setting()->has('social_twitter') && !empty(setting('social_twitter')) )<a href="{{setting('social_twitter')}}" target="_blank"><i class="fa fa-twitter"></i></a>@endif
