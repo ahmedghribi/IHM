@@ -17,16 +17,16 @@
 
             <select class="sorting" name="sortBy" onchange="this.form.submit();">
               <option value="">Default sorting</option>
-              <option value="price" @if( !empty($_GET['sortBy']) && $_GET['sortBy'] =='price' ) selected @endif>Price</option>
-              <option value="brand" @if( !empty($_GET['sortBy']) && $_GET['sortBy'] =='brand' ) selected @endif>Brand</option>
-              <option value="category" @if( !empty($_GET['sortBy']) && $_GET['sortBy'] =='category' ) selected @endif>Category</option>
+              <option value="price" @if( !empty($_GET['sortBy']) && $_GET['sortBy'] =='price' ) selected @endif>Prix</option>
+              <option value="brand" @if( !empty($_GET['sortBy']) && $_GET['sortBy'] =='brand' ) selected @endif>Marque</option>
+              <option value="category" @if( !empty($_GET['sortBy']) && $_GET['sortBy'] =='category' ) selected @endif>Catégorie</option>
             </select>
             <select class="show" name="show" onchange="this.form.submit();">
-              <option value="">Default</option>
-              <option value="1" @if( !empty($_GET['show']) && $_GET['show'] =='1' ) selected @endif>Show 1</option>
-              <option value="2" @if( !empty($_GET['show']) && $_GET['show'] =='2' ) selected @endif>Show 2</option>
-              <option value="12" @if( !empty($_GET['show']) && $_GET['show'] =='12' ) selected @endif>Show 12</option>
-              <option value="15" @if( !empty($_GET['show']) && $_GET['show'] =='15' ) selected @endif>Show 15</option>
+              <option value="">Par defaut</option>
+              <option value="1" @if( !empty($_GET['show']) && $_GET['show'] =='1' ) selected @endif>Voir 1</option>
+              <option value="2" @if( !empty($_GET['show']) && $_GET['show'] =='2' ) selected @endif>Voir 2</option>
+              <option value="12" @if( !empty($_GET['show']) && $_GET['show'] =='12' ) selected @endif>Voir 12</option>
+              <option value="15" @if( !empty($_GET['show']) && $_GET['show'] =='15' ) selected @endif>Voir 15</option>
             </select>
           </div>
         </div>
@@ -105,7 +105,7 @@ $(document).ready(function(){
     <div class="container">
       <div class="banner_content d-md-flex justify-content-between align-items-center">
         <div class="mb-3 mb-md-0">
-          <h2>No product found</h2>
+          <h2>Aucun produit trouvé</h2>
         </div>
       </div>
     </div>

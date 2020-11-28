@@ -56,7 +56,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="{{route('home')}}">
           <i class="fas fa-laugh-wink"></i>
-          <span>Home</span>
+          <span>Acceuil</span>
         </a>
       </li>
 
@@ -135,13 +135,13 @@
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseShipping" aria-expanded="true" aria-controls="collapseShipping">
             <i class="fas fa-fw fa-table"></i>
-            <span>Shipping</span>
+            <span>Livraison</span>
           </a>
           <div id="collapseShipping" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Shipping Options:</h6>
-              <a class="collapse-item" href="{{route('admin.shipping')}}">Shipping</a>
-              <a class="collapse-item" href="{{route('admin.shipping.create')}}">Ajouter shipping</a>
+              <h6 class="collapse-header">Livraison Options:</h6>
+              <a class="collapse-item" href="{{route('admin.shipping')}}">Livraison</a>
+              <a class="collapse-item" href="{{route('admin.shipping.create')}}">Ajouter livraison</a>
             </div>
           </div>
         </li>

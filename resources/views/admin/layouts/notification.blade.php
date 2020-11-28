@@ -8,8 +8,8 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Time</th>
-          <th scope="col">Title</th>
+          <th scope="col">Temps</th>
+          <th scope="col">Titre</th>
           <th scope="col">Action</th>
         </tr>
       </thead>

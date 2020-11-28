@@ -25,6 +25,6 @@
         @if($loop->index +1==5) @php break; @endphp  @endif
       @endforeach
     </div>
-    <a class="dropdown-item text-center small text-gray-500" href="{{ route('admin.notifications') }}">Show all notifications</a>
+    <a class="dropdown-item text-center small text-gray-500" href="{{ route('admin.notifications') }}">Montrez toutes les notifications</a>
   </div>
 </div>
