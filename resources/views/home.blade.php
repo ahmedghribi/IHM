@@ -10,7 +10,7 @@
 @if(count($sliders)>0)
 <section class="owl-carousel">
   @foreach($sliders as $slider)
-  <div class="home_banner_area mb-40" style="background: url({{asset('images/slider/'.$slider->image)}}) no-repeat center;">
+  <!--div class="home_banner_area mb-40" style="background: url({{asset('images/slider/'.$slider->image)}}) no-repeat center;">
     <div class="banner_inner d-flex align-items-center">
       <div class="container">
         <div class="banner_content row">
@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div-->
   @endforeach
 </section>
 @endif
