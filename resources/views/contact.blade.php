@@ -25,7 +25,7 @@
               },
               {elementType: 'labels.text.fill', stylers: [{color: '#A3A3A3'}]}
             ];
-            var map = new google.maps.Map(document.getElementById('map'), {
+            var ma€p = new google.maps.Map(document.getElementById('map'), {
               center: {lat: -31.197, lng: 150.744},
               zoom: 9,
               styles: grayStyles,
