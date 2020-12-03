@@ -14,6 +14,7 @@
   <p class="control_prev"><i class="fa fa-angle-left"></i></p>
   <ul>
   @foreach($sliders as $slider)
+<<<<<<< HEAD
 		<li class="slide{{$slider->id}}">
 			<div class="slider-title-wrapper">
 				<h3 class="slider-title"><span class="slider-title-h3">
@@ -50,6 +51,18 @@
           <h3>Prix : {{$product->price}} TND</h3>
          
          
+=======
+  <!--div class="home_banner_area mb-40" style="background: url({{asset('images/slider/'.$slider->image)}}) no-repeat center;">
+    <div class="banner_inner d-flex align-items-center">
+      <div class="container">
+        <div class="banner_content row">
+          <div class="col-lg-12">
+            {!!$slider->body!!}
+            @if($slider->button && $slider->url)
+            <a class="main_btn mt-40" href="{{$slider->url}}">{{$slider->button}}</a>
+            @endif
+          </div>
+>>>>>>> 00b027fff2344b94a4b078c24ea6ef47e18079c4
         </div>
       
         <a href="#">Buy Now</a>
@@ -58,7 +71,12 @@
       @endforeach
     </div>
     </div>
+<<<<<<< HEAD
   </div>
+=======
+  </div-->
+  @endforeach
+>>>>>>> 00b027fff2344b94a4b078c24ea6ef47e18079c4
 </section>
 
 
@@ -84,7 +102,12 @@
     <div class="row justify-content-center">
       <div class="col-lg-12">
         <div class="main_title">
+<<<<<<< HEAD
           <h2><span>Produit en Vedette</span></h2>
+=======
+          <h2><span></span></h2>
+          
+>>>>>>> 00b027fff2344b94a4b078c24ea6ef47e18079c4
         </div>
       </div>
     </div>

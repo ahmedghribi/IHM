@@ -25,14 +25,14 @@
               },
               {elementType: 'labels.text.fill', stylers: [{color: '#A3A3A3'}]}
             ];
-            var map = new google.maps.Map(document.getElementById('map'), {
+            var ma€p = new google.maps.Map(document.getElementById('map'), {
               center: {lat: -31.197, lng: 150.744},
               zoom: 9,
               styles: grayStyles,
               scrollwheel:  false
             });
           }
-          
+        
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
         
@@ -101,7 +101,7 @@
   </section>
 	<!-- ================ contact section end ================= -->
 
-	<!--================Contact Success and Error message Area =================-->
+
   <div id="success" class="modal modal-message fade" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
