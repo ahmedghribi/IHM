@@ -4,30 +4,65 @@
 @endsection
 @section('content')
 @push('styles')
-  <link rel="stylesheet" href="{{ asset('vendors/OwlCarousel/assets/owl.carousel.min.css') }}" />
+<style>
+
+</style>
 @endpush
 <!--================Home Banner Area =================-->
-@if(count($sliders)>0)
-<section class="owl-carousel">
+<div id="slider">
+  <p class="control_next"><i class="fa fa-angle-right"></i></p>
+  <p class="control_prev"><i class="fa fa-angle-left"></i></p>
+  <ul>
   @foreach($sliders as $slider)
-  <div class="home_banner_area mb-40" style="background: url({{asset('images/slider/'.$slider->image)}}) no-repeat center;">
-    <div class="banner_inner d-flex align-items-center">
-      <div class="container">
-        <div class="banner_content row">
-          <div class="col-lg-12">
-            {!!$slider->body!!}
-            @if($slider->button && $slider->url)
-            <a class="main_btn mt-40" href="{{$slider->url}}">{{$slider->button}}</a>
-            @endif
-          </div>
+		<li class="slide{{$slider->id}}">
+			<div class="slider-title-wrapper">
+				<h3 class="slider-title"><span class="slider-title-h3">
+  {{$slider->title}}</span>
+        <!--span class="slider-subtitle">This is the first slide</span--></h3>
+			</div>
+			<img src="{{asset('images/slider/'.$slider->image)}}" alt="">
+		</li>
+  @endforeach
+	 </ul>
+</div>
+<!--================End Home Banner Area =================-->
+<!--================ New Product Area =================-->
+<section class="new_product_area section_gap_bottom_custom">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="main_title">
+          <h2><span>Nouveau produits</span></h2>
+          <!--p>Bring called seed first of third give itself now ment</p-->
         </div>
       </div>
     </div>
+    <div class="cont">
+    <div class="row"> 
+      @foreach(Helper::recentProduct() as $product)
+      <div class="col-md-4">    <div class="card">
+      <div class="imgBx">
+        <img class="image" src="{{asset('images/product/'.$product->images[0]->image)}}">
+      </div>
+      <div class="contentBx">
+        <h2>{{$product->title}}</h2>
+        <div class="size">
+          <h3>Prix : {{$product->price}} TND</h3>
+         
+         
+        </div>
+      
+        <a href="#">Buy Now</a>
+      </div>
+    </div></div>
+      @endforeach
+    </div>
+    </div>
   </div>
-  @endforeach
 </section>
-@endif
-<!--================End Home Banner Area =================-->
+
+
+
 
 <!-- Start feature Area -->
 <section class="feature-area section_gap_bottom_custom">
@@ -50,11 +85,9 @@
       <div class="col-lg-12">
         <div class="main_title">
           <h2><span>Produit en Vedette</span></h2>
-          <p>N</p>
         </div>
       </div>
     </div>
-
     <div class="row">
       @foreach($products as $product)
         @include('layouts.product', ['product' => $product, 'size' => 'thumb', 'col' => 4])
@@ -64,25 +97,7 @@
 </section>
 <!--================ End Feature Product Area =================-->
 
-<!--================ New Product Area =================-->
-<section class="new_product_area section_gap_bottom_custom">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-12">
-        <div class="main_title">
-          <h2><span>Nouveau produits</span></h2>
-          <!--p>Bring called seed first of third give itself now ment</p-->
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      @foreach(Helper::recentProduct() as $product)
-        @include('layouts.product', ['product' => $product, 'size' => 'medium', 'col' => 3])
-      @endforeach
-    </div>
-  </div>
-</section>
-<!--================ End New Product Area =================-->
+
 
 <!--================ Inspired Product Area =================-->
 <section class="inspired_product_area section_gap_bottom_custom">
@@ -91,7 +106,7 @@
       <div class="col-lg-12">
         <div class="main_title">
           <h2><span>Inspired products</span></h2>
-          
+
         </div>
       </div>
     </div>
@@ -112,7 +127,7 @@
       <div class="col-lg-12">
         <div class="main_title">
           <h2><span>Articles</span></h2>
-          
+
         </div>
       </div>
     </div>
@@ -148,20 +163,52 @@
 <!--================ End Blog Area =================-->
 @endsection
 @push('scripts')
-<script src="{{ asset('vendors/OwlCarousel/owl.carousel.min.js') }}"></script>
 <script type="text/javascript">
-  $(document).ready(function() { 
+jQuery(document).ready(function ($) {
 
-$('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:0,
-    responsiveClass:false,
-    items:1,
-    autoplay:true,
-    lazyLoad:true,
-    autoplayHoverPause:true,
-});
+  // This is for the auto sliding
+  setInterval(function () {
+      moveRight();
+  }, 9000);
 
+  //variables
+  var slideCount = $('#slider ul li').length;
+  var slideWidth = $('#slider ul li').width();
+  var slideHeight = $('#slider ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+
+  $('#slider').css({ width: slideWidth, height: slideHeight });
+
+  $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+  $('#slider ul li:last-child').prependTo('#slider ul');
+
+  function moveLeft() {
+      $('#slider ul').animate({
+          left: + slideWidth
+      }, 300, function () {
+          $('#slider ul li:last-child').prependTo('#slider ul');
+          $('#slider ul').css('left', '');
+      });
+  };
+
+  function moveRight() {
+      $('#slider ul').animate({
+          left: - slideWidth
+      }, 300, function () {
+          $('#slider ul li:first-child').appendTo('#slider ul');
+          $('#slider ul').css('left', '');
+      });
+  };
+
+  $('.control_prev').click(function () {
+      moveLeft();
   });
+
+  $('.control_next').click(function () {
+      moveRight();
+  });
+
+});
 </script>
-@endpush 
+@endpush

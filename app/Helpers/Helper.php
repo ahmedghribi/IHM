@@ -116,10 +116,11 @@ class Helper
         return Post::orderBy('id', 'desc')->limit(3)->get();
     }
 
-    public static function recentProduct($count = 4)
+    public static function recentProduct($count = 3)
     {
-        return Product::latest()->orderBy('id', 'desc')->limit($count)->get();
+        return Product::with('images')->orderBy('id', 'desc')->limit($count)->get();
     }
+    
     public static function inspireProduct($count = 8)
     {
         $products = Product::query();

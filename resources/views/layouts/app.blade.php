@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/owl.css') }}" />
   <link rel="stylesheet" href="{{ asset('vendors/linericon/style.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}" />
@@ -230,6 +231,7 @@
 <script src="{{ asset('js/bootstrap.min.js') }}"></script> -->
 
 <script src="{{ asset('js/theme.js') }}"></script>
+<script src="{{ asset('js/owl.js') }}"></script>
 <!-- Page level custom scripts -->
 @stack('scripts')
 
