@@ -36,13 +36,13 @@
         <div class="cupon_area">
           <div class="check_title">
             <h2 id="coupon_title">
-              Have a coupon?
-              <label for="coupon_code">Click here to enter your code</label>
+              Avez vous un coupon?
+              <label for="coupon_code">Cliquez ici pour entrer votre code</label>
             </h2>
           </div>
           <div id="coupon_input">
             <input type="text" id="coupon_code" placeholder="Enter coupon code" />
-            <a class="tp_btn" href="#" id="coupon_apply">Apply Coupon</a>
+            <a class="tp_btn" href="#" id="coupon_apply">Appliquer Coupon</a>
           </div>
         </div>
         <form class="" action="{{ route('cart.order') }}" method="post">
@@ -50,7 +50,7 @@
           <div class="billing_details">
             <div class="row">
               <div class="col-lg-8">
-                <h3>Shipping Details</h3>
+                <h3>Shipping Détails</h3>
 
                 <div class="row contact_form">
                   <div class="col-md-6 form-group p_star">
@@ -70,7 +70,7 @@
                   </div>
                   <div class="col-md-12 form-group p_star">
                     <select class="select2" name="city" style="width:100%;">
-                      <option value="">Select city</option>
+                      <option value="">Select Ville</option>
                       @foreach(Helper::cities() as $city)
                       <option value="{{$city->id}}" @if(Helper::user_address('city_id', auth()->user()->id) == $city->id) selected @endif>{{$city->name}}</option>
                       @endforeach
@@ -90,11 +90,11 @@
 
               <div class="col-lg-4">
                 <div class="order_box">
-                  <h2>Your Order</h2>
+                  <h2>Votre Commande</h2>
                   <ul class="list">
                     <li>
                       <a href="{{route('cart')}}">
-                        Product <span>Total</span>
+                        Produits <span>Total</span>
                       </a>
                     </li>
 

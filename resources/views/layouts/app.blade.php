@@ -43,7 +43,8 @@
         <div class="row">
           <div class="col-lg-7">
             <div class="float-left">
-              <p>@if( Helper::setting()->has('app_email') && !empty(setting('app_email')) ) PHONE: <a href="mailto:{{setting('app_email')}}">{{setting('app_email')}}</a>@endif</p>
+              <p>DISTORE</p>
+              <p>@if( Helper::setting()->has('app_email') && !empty(setting('app_email')) )<a href="mailto:{{setting('app_email')}}">{{setting('app_email')}}</a>@endif</p>
               <p>@if( Helper::setting()->has('app_phone') && !empty(setting('app_phone')) )<a href="tel:{{setting('app_phone')}}">{{setting('app_phone')}}</a>@endif</p>
             </div>
           </div>
@@ -52,25 +53,15 @@
               <ul class="right_side">
                 <li>
                   <a href="{{route('shop.track')}}">
-                    track order
+                    Suivre ma commande
                   </a>
                 </li>
                 <li>
                   <a href="{{route('contact')}}">
-                    Contact Us
+                    Contactez nous
                   </a>
                 </li>
-                @if( Helper::setting()->has('shop_currency'))
-
-                <li class="curreny-wrap">Currency <i class="fa fa-angle-down"></i>
-                    <ul class="curreny-list">
-                      <li @if(Helper::base_currency() == Helper::currency()) class="active" @endif ><a href="{{route('shop.currency', 0)}}">{{Helper::base_currency_data()['symbol']}} {{Helper::base_currency_data()['code']}}</a></li>
-                      @foreach(Helper::currencies() as $currency)
-                        <li @if($currency->symbol == Helper::currency()) class="active" @endif ><a href="{{route('shop.currency', $currency->id)}}">{{$currency->symbol}} {{$currency->code}}</a></li>
-                      @endforeach
-                    </ul>
-                </li>
-                @endif
+           
               </ul>
             </div>
           </div>
@@ -82,9 +73,8 @@
         <nav class="navbar navbar-expand-lg navbar-light w-100">
           <!-- Brand and toggle get grouped for better mobile display -->
           <a class="navbar-brand logo_h" href="{{route('home')}}">
-            @if( Helper::setting()->has('logo') && !empty(setting('logo')) )
-            <img src="{{Storage::disk('public')->url(setting('logo'))}}" alt="" />
-            @endif
+            <img src="{{asset('img/logo.png')}}" alt="" style="width: 110px;"/>
+            
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,7 +85,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse offset w-100" id="navbarSupportedContent">
           <div class="row w-100 mr-0">
-            <div class="col-lg-7 pr-0">
+            <div class="col-lg-9 pr-0">
               <ul class="nav navbar-nav center_nav pull-right">
                 <li class="nav-item {{Request::path() === '/' ? 'active' : ''}}">
                   <a class="nav-link" href="{{route('home')}}">Acceuil</a>
@@ -129,7 +119,7 @@
 
             </div>
 
-            <div class="col-lg-5 pr-0">
+            <div class="col-lg-3 pr-0">
               <ul class="nav navbar-nav navbar-right right_nav pull-right">
 
 
