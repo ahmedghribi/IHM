@@ -16,9 +16,9 @@
             <table class="table w-100 d-block d-md-table">
               <thead>
                 <tr>
-                  <th scope="col">Product</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Quantity</th>
+                  <th scope="col">Produits</th>
+                  <th scope="col">Prix</th>
+                  <th scope="col">QTE</th>
                   <th scope="col">Total</th>
                   <th scope="col">Action</th>
                 </tr>
@@ -62,7 +62,7 @@
                       <h5 class="cart_single_total"><span class="money">{{Helper::currency_amount($cart->price)}}</span>{{Helper::currency()}}</h5>
                     </td>
                     <td>
-                      <a href="{{route('cart.delete', $cart->id)}}" class="btn btn-danger">Delete</a>
+                      <a href="{{route('cart.delete', $cart->id)}}" class="btn btn-danger">Effacer</a>
                     </td>
                   </tr>
                   @endforeach
@@ -72,11 +72,11 @@
                     <td colspan="1">
                       <div class="cupon_text">
                         <input type="text" placeholder="Coupon Code" id="coupon_code" />
-                        <a class="main_btn" id="coupon_apply" href="#">Apply</a>
+                        <a class="main_btn" id="coupon_apply" href="#">Appliquer</a>
                       </div>
                     </td>
                     <td colspan="4" class="text-right">
-                      <button type="submit" name="update_cart" class="gray_btn">Update Cart</button>
+                      <button type="submit" name="update_cart" class="gray_btn">Mise a jour Cart</button>
                     </td> 
 
                   </tr>
@@ -116,8 +116,8 @@
                 <tr class="out_button_area">
                   <td colspan="5">
                     <div class="checkout_btn_inner">
-                       <a class="gray_btn" href="{{route('shop')}}">Continue Shopping</a>
-                      <a class="main_btn" href="{{route('cart.checkout')}}">Proceed to checkout</a>
+                       <a class="gray_btn" href="{{route('shop')}}">Continuer Le Shopping</a>
+                      <a class="main_btn" href="{{route('cart.checkout')}}">Paiement</a>
                     </div>
                   </td>
                 </tr>
