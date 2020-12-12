@@ -743,7 +743,7 @@ Table of Content:
                 overflow: hidden;
                 width: 100%;
                 min-height: 200px;
-                background: #f6f6f6;
+                background: #7fd8f97c;
                 z-index: 1;
             }
             
@@ -5832,17 +5832,23 @@ Table of Content:
             /*---------------------------------------------------- */
             
             #slider {
+                
                 position: relative;
                 overflow: hidden;
                 /* padding-left: 24px; */
                 margin: 12px;
                 background-color: white;
+                justify-content: center;
+                align-items: center;
                 /* box-shadow: 0 6px 103px 0 rgba(0, 0, 0, .71); */
                 transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
+                
             }
             
+
             #slider:hover {
                 transform: scaleX(1.03) scaleY(1.03);
+                
             }
             
             #slider ul {
@@ -5858,7 +5864,7 @@ Table of Content:
                 float: left;
                 margin: 0;
                 padding: 0;
-                width: 1200px;
+                width: 1600px;
                 height: 600px;
                 text-align: center;
                 line-height: 300px;
